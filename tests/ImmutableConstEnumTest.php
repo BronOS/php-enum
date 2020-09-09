@@ -12,6 +12,13 @@ use PHPUnit\Framework\TestCase;
  */
 class ImmutableConstEnumTest extends TestCase
 {
+    /**
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::__construct
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::isValid
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::getOptionName
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::set
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::getValue
+     */
     public function testGetOptionName()
     {
         $enum = new class(2) extends ImmutableConstEnum {
@@ -20,8 +27,15 @@ class ImmutableConstEnumTest extends TestCase
         };
 
         $this->assertEquals('TWO', $enum->getOptionName());
+        $this->assertEquals(2, $enum->getValue());
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::__construct
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::getOptions
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::isValid
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::set
+     */
     public function testGetOptions()
     {
         $enum = new class(2) extends ImmutableConstEnum {
@@ -32,6 +46,11 @@ class ImmutableConstEnumTest extends TestCase
         $this->assertEquals(['ONE' => 1, 'TWO' => 2], $enum::getOptions());
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::__construct
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::isValid
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::set
+     */
     public function testInvalidOptionType()
     {
         $this->expectException(EnumException::class);
@@ -41,6 +60,11 @@ class ImmutableConstEnumTest extends TestCase
         };
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::__construct
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::isValid
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::set
+     */
     public function testDuplicateOptions()
     {
         $this->expectException(EnumException::class);
@@ -50,6 +74,14 @@ class ImmutableConstEnumTest extends TestCase
         };
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::__construct
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::getOptions
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::getOptionName
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::getValue
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::isValid
+     * @covers \BronOS\PhpEnum\ImmutableConstEnum::set
+     */
     public function testCallStatic()
     {
         $enum = new class(2) extends ImmutableConstEnum {

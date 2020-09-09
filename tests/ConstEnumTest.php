@@ -9,9 +9,18 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \BronOS\PhpEnum\ConstEnum
+ * @covers \BronOS\PhpEnum\ImmutableConstEnum
  */
 class ConstEnumTest extends TestCase
 {
+    /**
+     * @covers \BronOS\PhpEnum\ConstEnum::__construct
+     * @covers \BronOS\PhpEnum\ConstEnum::getValue
+     * @covers \BronOS\PhpEnum\ConstEnum::set
+     * @covers \BronOS\PhpEnum\ConstEnum::setValue
+     * @covers \BronOS\PhpEnum\ConstEnum::isValid
+     * @covers \BronOS\PhpEnum\ConstEnum::getOptions
+     */
     public function testSetValue()
     {
         $enum = new class(2) extends ConstEnum {

@@ -12,6 +12,9 @@ use PHPUnit\Framework\TestCase;
  */
 class AbstractImmutableEnumTest extends TestCase
 {
+    /**
+     * @covers \BronOS\PhpEnum\AbstractImmutableEnum::isValid
+     */
     public function testIsValid()
     {
         $enum = new class(2) extends AbstractImmutableEnum{
@@ -25,6 +28,9 @@ class AbstractImmutableEnumTest extends TestCase
         $this->assertFalse($enum::isValid(5));
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\AbstractImmutableEnum::isEqual
+     */
     public function testIsEqual()
     {
         $enum = new class(2) extends AbstractImmutableEnum{
@@ -38,6 +44,9 @@ class AbstractImmutableEnumTest extends TestCase
         $this->assertFalse($enum->isEqual(5));
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\AbstractImmutableEnum::getOptions
+     */
     public function testGetOptions()
     {
         $enum = new class(2) extends AbstractImmutableEnum{
@@ -50,6 +59,10 @@ class AbstractImmutableEnumTest extends TestCase
         $this->assertEquals([1,2,3], $enum::getOptions());
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\AbstractImmutableEnum::__construct
+     * @covers \BronOS\PhpEnum\AbstractImmutableEnum::getValue
+     */
     public function testConstruct()
     {
         $enum = new class(2) extends AbstractImmutableEnum{
@@ -62,6 +75,10 @@ class AbstractImmutableEnumTest extends TestCase
         $this->assertEquals(2, $enum->getValue());
     }
 
+    /**
+     * @covers \BronOS\PhpEnum\AbstractImmutableEnum::isValid
+     * @covers \BronOS\PhpEnum\AbstractImmutableEnum::set
+     */
     public function testConstructInvalidValue()
     {
         $this->expectException(EnumException::class);
