@@ -1,6 +1,5 @@
 # PHP Enum implementation
 ![Build Status](https://github.com/BronOS/php-enum/workflows/build/badge.svg)
-[![Build Status](https://travis-ci.com/BronOS/php-enum.svg?branch=master)](https://github.com/BronOS/php-enum)
 [![Latest Stable Version](https://poser.pugx.org/bronos/php-enum/v)](//packagist.org/packages/bronos/php-enum) 
 [![Total Downloads](https://poser.pugx.org/bronos/php-enum/downloads)](//packagist.org/packages/bronos/php-enum) 
 [![Latest Unstable Version](https://poser.pugx.org/bronos/php-enum/v/unstable)](//packagist.org/packages/bronos/php-enum) 
