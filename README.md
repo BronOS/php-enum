@@ -4,6 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/bronos/php-enum/downloads)](//packagist.org/packages/bronos/php-enum) 
 [![Latest Unstable Version](https://poser.pugx.org/bronos/php-enum/v/unstable)](//packagist.org/packages/bronos/php-enum) 
 [![License](https://poser.pugx.org/bronos/php-enum/license)](//packagist.org/packages/bronos/php-enum)
+[![codecov](https://codecov.io/gh/BronOS/php-enum/branch/master/graph/badge.svg)](https://codecov.io/gh/BronOS/php-enum)
 
 ## Installation
 
