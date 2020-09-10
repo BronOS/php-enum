@@ -27,5 +27,8 @@
     "psr-4": {
       "BronOS\\PhpEnum\\Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
   }
 }
