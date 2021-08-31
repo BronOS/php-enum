@@ -59,7 +59,7 @@ use ReflectionException;
  */
 class ImmutableConstEnum extends AbstractImmutableEnum
 {
-    private static array $options = [];
+    protected static $options = [];
 
     /**
      * Returns available options for the enum.

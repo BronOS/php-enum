@@ -49,7 +49,7 @@ abstract class AbstractImmutableEnum
     /**
      * @var int Enum's value.
      */
-    private int $value;
+    private $value;
 
     /**
      * Abstract constructor.
